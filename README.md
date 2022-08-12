@@ -5,37 +5,38 @@ Functionality & MVPs
 
 With DK-FM, users will be able to :	
 
-Select a genre and mood which then gets the accompanying playlist from Spotify
-Users will have access to a music controller that can:
-play/pause/skip song
-Adjust/mute volume
-Users will have access to a visuals controller that can:
-Select next background or previous background
-Toggle between moving images or a more static page
-Toggle between a light and dark mode	
-Hide all buttons to only show background	
+    Select a genre and mood which then gets the accompanying playlist from Spotify
+    Users will have access to a music controller that can:
+        play/pause/skip song
+        Adjust/mute volume
+    Users will have access to a visuals controller that can:
+        Select next background or previous background
+        Toggle between moving images or a more static page
+    Toggle between a light and dark mode	
+    Hide all buttons to only show background	
 
 This project will also include:
-A landing page explaining the rules
-A collapsible menu showing the show keys
-Production Read me
-Free use images/gifs to be used for backgrounds
+    A landing page explaining the rules
+    A collapsible menu showing the show keys
+    Production Read me
+    Free use images/gifs to be used for backgrounds
 
 WireFrames:
  	Landing page https://wireframe.cc/pro/pp/ba2f97dc0572618
-Textboxes will suggest genres and moods available as they type
-Toggles button light and dark mode in
-Begin button causes all text to fade out before starting the visualizers and music
+        Textboxes will suggest genres and moods available as they type
+            Toggles button light and dark mode in
+            Begin button causes all text to fade out before starting the visualizers and music
 Session https://wireframe.cc/pro/pp/ba2f97dc0572618
-Title in top left is hyperlink to reset music player	
-bottom left corner
-Song information scrolls horizontally 
-Song nav bar displays play, pause, and volume controllers
-Bottom middle
-Personal nav links to github, linkedin
-Bottom Right
-Assistance button that shows text when hovered over
-Text Displays hotkeys for controls users have access too
+    Title in top left is hyperlink to reset music player	
+    bottom left corner
+        Song information scrolls horizontally 
+        Song nav bar displays play, pause, and volume controllers
+    Bottom middle   
+        Personal nav links to github, linkedin
+    Bottom Right
+        Assistance button that shows text when hovered over
+        Text Displays hotkeys for controls users have access too
+
 Friday + Weekend
 	-Set up project and webpack
 	-Create two pages, landing page and session page
@@ -49,26 +50,26 @@ Monday
 	-assign hotkeys to user controllers
 	-create menu to display hotkey and info on hover over
 Tuesday
--Access where we are in the project, if pages are connected and music plays
-	-assure controllers and hot keys are working
-		-start styling the page elements with CSS
-		-start curating the playlists and gifs according to similar moods
--if pages still aren't connected
-	-this is the only goal for today, get the pages connected and playing 
+    -Access where we are in the project, if pages are connected and music plays
+        -assure controllers and hot keys are working
+            -start styling the page elements with CSS
+            -start curating the playlists and gifs according to similar moods
+    -if pages still aren't connected
+        -this is the only goal for today, get the pages connected and playing 
 Wednesday
-	-Combing over and CSS day, ensure everything works as expected
--create two color scheme to toggle between for day and night mode
+    -Combing over and CSS day, ensure everything works as expected
+    -create two color scheme to toggle between for day and night mode
 Thursday AM
-Deploy to github
-Double check read message and files are updates
+    Deploy to github
+    Double check read message and files are updates
 
 
 This project will be implemented with the following technologies:
-Canvas API to display the animations
-Spotify API to get playlists
-Webpack and Babel to bundle and transpile the source JavaScript 
-NPM
- 
+    Canvas API to display the animations
+    Spotify API to get playlists
+    Webpack and Babel to bundle and transpile the source JavaScript 
+    NPM
+    
  
  
 
