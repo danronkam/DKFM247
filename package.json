@@ -1,0 +1,41 @@
+{
+  "name": "dkfm247",
+  "version": "1.0.0",
+  "description": "DK-FM is a music player that lets users select a genre and mood which plays a continuous curated set of songs and accompanying visuals. While many music players focus on the users and the playlists they make, DK-FM is meant to be set up and forgotten while users focus on other more important things in their lives. Although the playlist won't be user made, they will still have the ability to cycle through the songs and backgrounds in order to create their ideal set up. It’s background music that won't distract you but also won’t put you to sleep.",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danronkam/DKFM247.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danronkam/DKFM247/issues"
+  },
+  "homepage": "https://github.com/danronkam/DKFM247#readme",
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.24.1",
+    "css-loader": "^6.7.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-fetch": "^3.2.10",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

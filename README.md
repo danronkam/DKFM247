@@ -66,10 +66,10 @@ Thursday AM
 
 This project will be implemented with the following technologies:
     Canvas API to display the animations
-    Spotify API to get playlists
     Web Playback SDK
     Webpack and Babel to bundle and transpile the source JavaScript 
     NPM
+    Canvas and Web Audio API
     
  
  
