@@ -2,6 +2,7 @@ const musicPlayer = document.querySelector('music_player')
 const playpauseButton = document.querySelector('#play_pauseButton')
 const skipButton = document.querySelector('#skip_button')
 const audio = document.querySelector('#audio')
+const startForm = document.getElementById('session_start')
 
 let songTitle = document.querySelector(".song_title");
 let songArtist = document.querySelector(".song_artist");
@@ -23,49 +24,91 @@ let songs = [
         "title": "DROPdrip",
         "audio": "./Music/DROPdrip.mp3",
         "artist": "Palmistry",
-        "genre": "electronic",
+        "genre": "Electronic",
         "mood": "Chill"
     }
 ]
 
+let images = [
+    {
+        "title": "Nighthawks Diner",
+        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-2.gif",
+        "mood": "Chill"
+    },
+    {
+        "title": "People in the Sun",
+        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-3.gif",
+        "mood": "Relaxing"
+    }
+]
+// $document.ready(function () {
+//     $("form").submit(function (event) {
+//         event.preventDefault()
+
+//         var mood = document.getElementById('mood').value
+//         var genre = document.getElementById('genre').value
+
+
+//         $.get("process.php", { mood: mood, genre: genre }, function (data) {
+//             console.log(data)
+//         })
+//     })
+// })
+
 let playlist;
+let backgrounds;
 let playlistIdx = 0;
 let isPlaying = false;
 let currentSong = document.createElement('audio')
 
+startForm.addEventListener('submit', e => {
+    console.log(e, "EVENT!!!")
+    e.preventDefault();
+    console.log('I AM HERE')
+    const mood = startForm.elements['mood']
+    const genre = startForm.elements['genre']
+    getPlaylist(mood)
+    playSong()
+})
+
 function getPlaylist(mood) {
-   return playlist = songs.filter(song => song.mood === mood)
+    return playlist = songs.filter(song => song.mood === mood)
+}
+
+function getBackgrounds(mood) {
+    return backgrounds = images.filter(image => image.mood === mood)
 }
 
 function getSong(playlistIdx) {
     reset()
 
-    currentSong.src = songs[playlistIdx].audio;
+    currentSong.src = playlist[playlistIdx].audio;
     currentSong.load()
 
-    songTitle.textContent = songs[playlistIdx].title
-    songArtist.textContent = songs[playlistIdx].artist
+    songTitle.textContent = playlist[playlistIdx].title
+    songArtist.textContent = playlist[playlistIdx].artist
     console.log(currentSong)
     currentSong.addEventListener("ended", nextSong)
 }
 
-function reset(){
+function reset() {
     currentTime.textContent = "00:00";
     totalDuration.textContent = "00:00"
     seekSlider.value = 0;
 }
 
 function playPause() {
-  console.log(currentSong, 'currentSong')
-
-    if(!currentSong.src) {
+    if (playlist === undefined) {
+        playlist = songs
+    }
+    if (!currentSong.src) {
         getSong(playlistIdx);
         playSong();
         isPlaying = true;
-    }  else if (isPlaying === false) {
-        playSong() 
+    } else if (isPlaying === false) {
+        playSong()
     } else {
-            pauseSong()
+        pauseSong()
     }
     // var playPromise = currentSong.play();
 
@@ -87,8 +130,8 @@ function playPause() {
 }
 
 function playSong() {
-    if(!currentSong) {
-        currentSong = getSong(playlistIdx) 
+    if (!currentSong) {
+        currentSong = getSong(playlistIdx)
     }
     currentSong.play();
     isPlaying = true;
@@ -112,6 +155,7 @@ function nextSong() {
     getSong(playlistIdx);
     playSong()
 }
+
 
 
 
