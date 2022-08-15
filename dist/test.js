@@ -27,7 +27,7 @@ let songs = [
 ]
 
 let playlist;
-const playlistIdx = 0;
+let playlistIdx = 0;
 let isPlaying = false;
 let currentSong = document.createElement('audio')
 
@@ -43,7 +43,7 @@ function getSong(playlistIdx) {
 
     songTitle.textContent = songs[playlistIdx].title
     songArtist.textContent = songs[playlistIdx].artist
-
+    console.log(currentSong)
     currentSong.addEventListener("ended", nextSong)
 }
 
@@ -54,16 +54,16 @@ function reset(){
 }
 
 function playPause() {
-    var playPromise = currentSong.play();
+    // var playPromise = currentSong.play();
 
-    if(playPromise != undefined) {
-        playPromise.then(_ => {
-            currentSong.pause()
-        })
-        .catch(error => {
+    // if(playPromise != undefined) {
+    //     playPromise.then(_ => {
+    //         currentSong.pause()
+    //     })
+    //     .catch(error => {
 
-        })
-    }
+    //     })
+    // }
     if(!isPlaying) {
         playSong();
     } else {
@@ -73,7 +73,7 @@ function playPause() {
 
 function playSong() {
     if(!currentSong) {
-        getSong(playlistIdx) 
+        currentSong = getSong(playlistIdx) 
     }
     currentSong.play();
     isPlaying = true;

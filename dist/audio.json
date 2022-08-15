@@ -1,5 +1,4 @@
-
-    let songs = [
+    [
         {
             "title": "Abdelazer",
             "audio": "./Music/Abdelazer.mp3",
