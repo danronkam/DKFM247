@@ -1,11 +1,15 @@
 const musicPlayer = document.querySelector('music_player')
-const playButton = document.querySelector('#play_button')
+const playpauseButton = document.querySelector('#play_pauseButton')
 const skipButton = document.querySelector('#skip_button')
 const audio = document.querySelector('#audio')
 
-const songTitle = document.querySelector('song_title')
-const songArtist = document.querySelector('song_artist')
+let songTitle = document.querySelector(".song_title");
+let songArtist = document.querySelector(".song_artist");
 
+let seekSlider = document.querySelector(".seek_slider");
+let volumeSlider = document.querySelector(".volume_slider");
+let currentTime = document.querySelector(".current_time");
+let totalDuration = document.querySelector(".total_duration");
 
 let songs = [
     {
@@ -32,13 +36,50 @@ function getPlaylist(mood) {
 }
 
 function getSong(playlistIdx) {
-    currentSong.src = playlist[playlistIdx].audio;
+    reset()
+
+    currentSong.src = songs[playlistIdx].audio;
     currentSong.load()
 
-    songTitle.textContent = playlist[playlistIdx].title
-    songArtist.textContent = playlist[playlistIdx].artist
+    songTitle.textContent = songs[playlistIdx].title
+    songArtist.textContent = songs[playlistIdx].artist
 
     currentSong.addEventListener("ended", nextTrack)
+}
+
+function reset(){
+    currentTime.textContent = "00:00";
+    totalDuration.textContent = "00:00"
+    seekSlider.value = 0;
+}
+
+function playPause() {
+    if(!isPlaying) playSong();
+    else pauseSong();
+}
+
+function playSong() {
+    currentSong.play();
+    isPlaying = true;
+
+    // playpauseButton.innerHTML = <i class="fas fa-pause"></i>
+}
+
+function pauseSong() {
+    currentSong.pause();
+    isPlaying = false;
+
+    // playpauseButton.innerHTML = <i class="fas fa-play"></i>
+}
+
+function nextSong() {
+    if (playlistIdx < songs.length - 1) {
+        playlistIdx += 1
+    } else {
+        playlistIdx = 0
+    }
+    getSong(playlistIdx);
+    playSong()
 }
 
 
