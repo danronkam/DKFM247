@@ -16,12 +16,14 @@ let songs = [
         "title": "Abdelazer",
         "audio": "./Music/Abdelazer.mp3",
         "artist": "Philip Adler",
+        "genre": "Piano",
         "mood": "Relaxing"
     },
     {
         "title": "DROPdrip",
         "audio": "./Music/DROPdrip.mp3",
         "artist": "Palmistry",
+        "genre": "electronic",
         "mood": "Chill"
     }
 ]
@@ -54,21 +56,34 @@ function reset(){
 }
 
 function playPause() {
+  console.log(currentSong, 'currentSong')
+
+    if(!currentSong.src) {
+        getSong(playlistIdx);
+        playSong();
+        isPlaying = true;
+    }  else if (isPlaying === false) {
+        playSong() 
+    } else {
+            pauseSong()
+    }
     // var playPromise = currentSong.play();
 
     // if(playPromise != undefined) {
     //     playPromise.then(_ => {
-    //         currentSong.pause()
+    //         pauseSong()
     //     })
     //     .catch(error => {
 
     //     })
     // }
-    if(!isPlaying) {
-        playSong();
-    } else {
-        pauseSong();
-    }
+    // // if(!isPlaying) {
+    // //     playSong();
+    // // } else {
+    //     else {
+    //     playSong();
+
+    // }
 }
 
 function playSong() {
