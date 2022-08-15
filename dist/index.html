@@ -5,14 +5,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Test Audio Player + Background</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
   </head>
 
   <body>
-    <h1>asdf</h1>
-    <button id="button1">Button!</button>
-    <button id="button2">Button2!</button>
+
+    <div class="container">
+      <audio id="audio"></audio>
+      <div class="now_playing">
+        <div class="song_title">Song</div>
+        <div class="song_artist">Artist</div>
+      </div>
+     
+      <div class="music_player">
+        <div class="music_player_progress">
+          <div class="progress"></div>
+        </div>
+        <button id="play_pauseButton" onclick="playpauseTrack()">
+          <i class="fas fa-play"></i> 
+          play
+        </button>
+        <button id="skip_button" onclick="nextTrack()">
+          <i class="fas fa-step-forward"></i> 
+          skip
+        </button>
+      </div>
+    </div>
+
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100"
+        value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+
+    <div class="slider_container">
+      <i class="fas fa-volume-down"></i>
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fas fa-volume-up"></i>
+    </div>
+  </div>
 
     <script src="./test.js"></script>
   </body>
