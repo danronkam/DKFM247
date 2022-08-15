@@ -54,11 +54,27 @@ function reset(){
 }
 
 function playPause() {
-    if(!isPlaying) playSong();
-    else pauseSong();
+    var playPromise = currentSong.play();
+
+    if(playPromise != undefined) {
+        playPromise.then(_ => {
+            currentSong.pause()
+        })
+        .catch(error => {
+
+        })
+    }
+    if(!isPlaying) {
+        playSong();
+    } else {
+        pauseSong();
+    }
 }
 
 function playSong() {
+    if(!currentSong) {
+        getSong(playlistIdx) 
+    }
     currentSong.play();
     isPlaying = true;
 
