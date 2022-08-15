@@ -44,7 +44,7 @@ function getSong(playlistIdx) {
     songTitle.textContent = songs[playlistIdx].title
     songArtist.textContent = songs[playlistIdx].artist
 
-    currentSong.addEventListener("ended", nextTrack)
+    currentSong.addEventListener("ended", nextSong)
 }
 
 function reset(){
