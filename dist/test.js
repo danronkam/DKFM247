@@ -62,12 +62,17 @@ let isPlaying = false;
 let currentSong = document.createElement('audio')
 
 startForm.addEventListener('submit', e => {
-    console.log(e, "EVENT!!!")
+    let mood = document.querySelector('#mood').value
+    console.log(mood)
     e.preventDefault();
-    console.log('I AM HERE')
-    const mood = startForm.elements['mood']
-    const genre = startForm.elements['genre']
+    console.log(e, "EVENT!!!")
+    // console.log(e.data())
+
+    // const mood = e.getElementById('mood')
+    // const genre = e.getElementById('genre')
+    console.log(mood)
     getPlaylist(mood)
+    getSong(playlistIdx)
     playSong()
 })
 
@@ -132,7 +137,7 @@ function playPause() {
 function playSong() {
     if (!currentSong) {
         currentSong = getSong(playlistIdx)
-    }
+    } 
     currentSong.play();
     isPlaying = true;
 

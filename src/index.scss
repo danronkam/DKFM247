@@ -1,0 +1,122 @@
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+
+  * { box-sizing: border-box; }
+  
+  body,
+  html { overflow-x: hidden; }
+  
+  .song_info {
+    top: 60%;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    padding: 15px 0;
+    background-color: black;
+    opacity: 50%;
+    color: red;
+  }
+
+  .song_title {
+    float: left;
+    padding-right: 15px;
+  }
+
+  .now_playing > div {
+    font-style: italic;
+  }
+  
+  .song_content {
+    display: block;  
+    width: 100%;
+    transform: translateX(100%);  
+    animation: move 15s linear infinite ;
+  }
+  
+  @keyframes move {
+    to { transform: translateX(-100%); }
+  }
+  
+
+/* ------------ this is scrolling text ^^^^ */
+*,
+*::after,
+*::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+  background: linear-gradient(37deg, rgba(238, 174, 202, 1) 0%, rgba(203, 176, 223, 1) 37%, rgba(148, 187, 233, 1) 100%);
+  display: grid;
+  place-items: center;
+}
+
+.music__title {
+  color: var(--blue);
+  background-color: var(--light);
+  padding: 1.5rem 2.5rem;
+  width: 100%;
+  letter-spacing: -1px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+
+.music__player {
+  display: grid;
+  grid-gap: 1.5rem;
+  margin: 1.5rem;
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+  min-width: 40vw;
+  background-color: var(--light);
+  box-shadow: 0px 4px 4px var(--dark);
+  border-radius: var(--radius);
+  width: 85%;
+  max-width: 250px;
+  margin: -5rem auto 0;
+  padding: .5rem 1rem;
+  position: relative;
+  z-index: initial;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-items: center;
+  grid-gap: 1rem;
+  transition: var(--transition);
+}
+
+.music__player.playing {
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+
+.music__player--progress {
+  position: absolute;
+  z-index: -1;
+  height: 10px;
+  width: 100%;
+  top: -10%;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.music__player.playing .music__player--progress {
+  transform: translateY(0);
+  z-index: 0;
+}
+
+.progress {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  cursor: pointer;
+}
+
