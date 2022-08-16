@@ -3,7 +3,10 @@ const playpauseButton = document.querySelector('#play_pauseButton')
 const skipButton = document.querySelector('#skip_button')
 const audio = document.querySelector('#audio')
 const startForm = document.getElementById('session_start')
+const startButton = document.getElementById('start_button')
+const changeButtom = document.getElementById('change')
 
+let body = document.body
 let songTitle = document.querySelector(".song_title");
 let songArtist = document.querySelector(".song_artist");
 
@@ -39,7 +42,12 @@ let images = [
         "title": "People in the Sun",
         "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-3.gif",
         "mood": "Relaxing"
-    }
+    },
+    {
+        "title": "Nighthawks Diner",
+        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-2.gif",
+        "mood": "Chill"
+    },
 ]
 // $document.ready(function () {
 //     $("form").submit(function (event) {
@@ -58,6 +66,7 @@ let images = [
 let playlist;
 let backgrounds;
 let playlistIdx = 0;
+let backgroundIDX = 0;
 let isPlaying = false;
 let currentSong = document.createElement('audio')
 
@@ -76,12 +85,37 @@ startForm.addEventListener('submit', e => {
     playSong()
 })
 
+startButton.addEventListener('click', e => {
+    let login = document.getElementById("login")
+    let dkfm = document.getElementById("dkfm")
+    login.classList.add('fadeOut')
+    dkfm.classList.add('fadeIn')
+    login.style.display='none'
+    dkfm.style.display = "flex"
+
+})
+
+changeButtom.addEventListener('click', e => {
+    nextBackground()
+})
+
 function getPlaylist(mood) {
     return playlist = songs.filter(song => song.mood === mood)
 }
 
 function getBackgrounds(mood) {
     return backgrounds = images.filter(image => image.mood === mood)
+}
+
+function nextBackground() {
+    if(backgroundIDX === images.length - 1) {
+        backgroundIDX = 0
+        body.style.backgroundImage = `url(${images[backgroundIDX].source})`
+    } else {
+        backgroundIDX += 1
+        body.style.backgroundImage = `url(${images[backgroundIDX].source})`
+        return
+    }
 }
 
 function getSong(playlistIdx) {

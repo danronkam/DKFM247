@@ -10,29 +10,32 @@
     <link rel="stylesheet" type="text/css" href="./main.css" />
   </head>
 
-  <body>
-    <div id="login">
-      
-      <form id='session_start' >
-        <select class="mood_selector" name="mood" id="mood" data-id="mood">
-          <option value="selected" selected="selected">Mood</option>
-          <option value="Chill" >Chill</option>
-          <option value="Relaxing">Relaxing</option>
-        </select>  
+  <body class="body">
+    <button id="change">CHANGE BACKGROUND</button>
+    <container class="login" id="login">
+      <div class="animated fadeIn" >
+        <div class="animated ">
+          <form id='session_start' >
+            <select class="mood_selector" name="mood" id="mood" data-id="mood">
+              <option value="selected" selected="selected">Mood</option>
+              <option value="Chill" >Chill</option>
+              <option value="Relaxing">Relaxing</option>
+            </select>  
+            <select class="genre_selector" name="genre" id="genre">
+              <option value="selected" selected="selected">Genre</option>
+              <option value="Piano">Piano</option>
+              <option value="Chill">Electronic</option>
+            </select>  
 
-        <select class="genre_selector" name="genre" id="genre">
-          <option value="selected" selected="selected">Genre</option>
-          <option value="Piano">Piano</option>
-          <option value="Chill">Electronic</option>
-        </select>  
-
-      <button>Take Me Away</button>
+      <button id="start_button">Take Me Away</button>
       </form>
+      </div>
     </div>
+    </container>
 
-    <div class="container">
-      <audio id="audio"></audio>
-     
+
+
+    <container id="dkfm">
       <div class="music_player">
         <div class="music_player_progress">
           <div class="progress"></div>
@@ -46,31 +49,32 @@
           skip
         </button>
       </div>
-    </div>
 
-    <div class="slider_container">
-      <div class="current_time">00:00</div>
-      <input type="range" min="1" max="100"
-        value="0" class="seek_slider" onchange="seekTo()">
-      <div class="total_duration">00:00</div>
-    </div>
 
-    <div class="slider_container">
-      <i class="fas fa-volume-down"></i>
-      <input type="range" min="1" max="100"
-        value="99" class="volume_slider" onchange="setVolume()">
-      <i class="fas fa-volume-up"></i>
-    </div>
-  </div>
+      <div class="slider_container">
+        <div class="current_time">00:00</div>
+        <input type="range" min="1" max="100"
+          value="0" class="seek_slider" onchange="seekTo()">
+        <div class="total_duration">00:00</div>
+      </div>
 
-  <div class="song_info">
-    <span class="song_content">
-      <div class="now_playing">
-        <div class="song_title">Song</div>
-        <div class="song_artist">Artist</div>
-      </div>    
-    </span>
-  </div>
+      <div class="slider_container">
+        <i class="fas fa-volume-down"></i>
+        <input type="range" min="1" max="100"
+          value="99" class="volume_slider" onchange="setVolume()">
+        <i class="fas fa-volume-up"></i>
+      </div>
+
+      <div class="song_info">
+        <span class="song_content">
+          <div class="now_playing">
+            <div class="song_title">Song</div>
+            <div class="song_artist">Artist</div>
+          </div>    
+        </span>
+      </div>
+  </container>
+
 
     <script src="./test.js"></script>
   </body>
