@@ -96,6 +96,19 @@ startForm.addEventListener('submit', e => {
     nextBackground()
 })
 
+document.addEventListener('keypress', event => {
+    var name = event.key;
+    var code = event.code;
+
+    if(name === 'p') {
+        playPause()
+    } else if (name === 'n') {
+        nextSong()
+    } else if (name === 'b') {
+        nextBackground()
+    } 
+})
+
 startButton.addEventListener('click', e => {
     let login = document.getElementById("login")
     let dkfm = document.getElementById("dkfm")
@@ -130,6 +143,10 @@ function getBackgrounds(mood) {
 }
 
 function nextBackground() {
+    if(!backgrounds) {
+        backgrounds = images
+    }
+
     if(backgroundIDX === images.length - 1) {
         backgroundIDX = 0
         body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
