@@ -5,8 +5,12 @@ const audio = document.querySelector('#audio')
 const startForm = document.getElementById('session_start')
 const startButton = document.getElementById('start_button')
 const changeButtom = document.getElementById('change')
+const volumeButton = document.getElementById('volume')
+const seek_slider = document.querySelector('seek_slider')
+const volume_slider = document.querySelector('#volume_slider')
 
 let body = document.body
+let station_title = document.querySelector(".station_title");
 let songTitle = document.querySelector(".song_title");
 let songArtist = document.querySelector(".song_artist");
 
@@ -48,6 +52,11 @@ let images = [
         "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-2.gif",
         "mood": "Chill"
     },
+    {
+        "title": "People in the Sun",
+        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-3.gif",
+        "mood": "Relaxing"
+    }
 ]
 // $document.ready(function () {
 //     $("form").submit(function (event) {
@@ -81,8 +90,10 @@ startForm.addEventListener('submit', e => {
     // const genre = e.getElementById('genre')
     console.log(mood)
     getPlaylist(mood)
+    getBackgrounds(mood)
     getSong(playlistIdx)
     playSong()
+    nextBackground()
 })
 
 startButton.addEventListener('click', e => {
@@ -95,9 +106,20 @@ startButton.addEventListener('click', e => {
 
 })
 
-changeButtom.addEventListener('click', e => {
-    nextBackground()
+volumeButton.addEventListener('click', e => {
+    let previousVolume = currentSong.volume
+    if(currentSong.volume === 0) {
+        currentSong.volume = .5
+        volume_slider.value = 50
+    } else {
+        currentSong.volume = 0
+        volume_slider.value = 0
+    }
 })
+
+// changeButtom.addEventListener('click', e => {
+//     nextBackground()
+// })
 
 function getPlaylist(mood) {
     return playlist = songs.filter(song => song.mood === mood)
@@ -110,16 +132,18 @@ function getBackgrounds(mood) {
 function nextBackground() {
     if(backgroundIDX === images.length - 1) {
         backgroundIDX = 0
-        body.style.backgroundImage = `url(${images[backgroundIDX].source})`
+        body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
     } else {
         backgroundIDX += 1
-        body.style.backgroundImage = `url(${images[backgroundIDX].source})`
-        return
+        body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
     }
 }
 
 function getSong(playlistIdx) {
-    reset()
+    if (!playlist) {
+        playlist = songs
+    }
+    // reset()
 
     currentSong.src = playlist[playlistIdx].audio;
     currentSong.load()
@@ -130,11 +154,11 @@ function getSong(playlistIdx) {
     currentSong.addEventListener("ended", nextSong)
 }
 
-function reset() {
-    currentTime.textContent = "00:00";
-    totalDuration.textContent = "00:00"
-    seekSlider.value = 0;
-}
+// function reset() {
+//     currentTime.textContent = "00:00";
+//     totalDuration.textContent = "00:00"
+//     seekSlider.value = 0;
+// }
 
 function playPause() {
     if (playlist === undefined) {
@@ -192,10 +216,16 @@ function nextSong() {
         playlistIdx = 0
     }
     getSong(playlistIdx);
+    // progressBar.style.width = '0%'
     playSong()
 }
 
 
+function setVolume() {
+    // Set the volume according to the
+    // percentage of the volume slider set
+    currentSong.volume = volume_slider.value / 100;
+  }
 
 
 
