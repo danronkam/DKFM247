@@ -77,7 +77,8 @@ let backgrounds;
 let playlistIdx = 0;
 let backgroundIDX = 0;
 let isPlaying = false;
-let currentSong = document.createElement('audio')
+let currentSong = document.createElement('audio');
+let volumes = [];
 
 startForm.addEventListener('submit', e => {
     let mood = document.querySelector('#mood').value
@@ -120,11 +121,13 @@ startButton.addEventListener('click', e => {
 })
 
 volumeButton.addEventListener('click', e => {
+    // console.log(currentSong.volume)
     let previousVolume = currentSong.volume
-    if(currentSong.volume === 0) {
-        currentSong.volume = .5
-        volume_slider.value = 50
+    if(previousVolume === 0) {
+        currentSong.volume = volumes[volumes.length - 1]
+        volume_slider.value = (volumes[volumes.length - 1]) * 100
     } else {
+        volumes.push(previousVolume)
         currentSong.volume = 0
         volume_slider.value = 0
     }
