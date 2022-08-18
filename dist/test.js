@@ -9,6 +9,7 @@ const volumeButton = document.getElementById('volume')
 const seek_slider = document.querySelector('seek_slider')
 const volume_slider = document.querySelector('#volume_slider')
 const dans_links = document.getElementById('dans_links')
+const info = document.getElementById('info')
 
 let body = document.body
 let station_title = document.querySelector(".station_title");
@@ -34,6 +35,13 @@ let songs = [
         "artist": "Palmistry",
         "genre": "Electronic",
         "mood": "Chill"
+    },
+    {
+        "title": "Left Undone",
+        "audio": "./Music/left_undone.mp3",
+        "artist": "Alex Benedict",
+        "genre": "Piano",
+        "mood": "Dark"
     }
 ]
 
@@ -54,9 +62,15 @@ let images = [
         "mood": "Chill"
     },
     {
-        "title": "People in the Sun",
-        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-3.gif",
-        "mood": "Relaxing"
+        "title": "Hallway",
+        "source": "https://cutewallpaper.org/21/video-background-loops/Best-Hd-Video-Background-Seamless-Loop-Seamless-Background-.gif",
+        "mood": "Dark"
+    }
+    ,
+    {
+        "title": "Matrix",
+        "source": "https://j.gifs.com/Q1xW4q@large.gif?download=true",
+        "mood": "Dark"
     }
 ]
 // $document.ready(function () {
@@ -121,8 +135,10 @@ startButton.addEventListener('click', e => {
     login.style.display='none'
     dkfm.style.display = "flex"
     dans_links.style.display = 'block'
-
+    info.classList.add('fadeIn')
+    dkfm.style.display = "flex"
 })
+
 
 function muteSong() {
     let previousVolume = currentSong.volume
