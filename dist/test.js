@@ -27,63 +27,63 @@ let totalDuration = document.querySelector(".total_duration");
 let songs = [
     {
         "title": "Abdelazer",
-        "audio": "./Music/Abdelazer.mp3",
+        "audio": "./dist/Music/Abdelazer.mp3",
         "artist": "Philip Adler",
         "genre": "Piano",
         "mood": "Chill"
     },
     {
         "title": "DROPdrip",
-        "audio": "./Music/DROPdrip.mp3",
+        "audio": "./dist/Music/DROPdrip.mp3",
         "artist": "Palmistry",
         "genre": "Electronic",
         "mood": "Chill"
     },
     {
         "title": "Left Undone",
-        "audio": "./Music/left_undone.mp3",
+        "audio": "./dist/Music/left_undone.mp3",
         "artist": "Alex Benedict",
         "genre": "Piano",
         "mood": "Dark"
     },
     {
         "title": "Future Dollars",
-        "audio": "./Music/future-dollars-zuul.mp3",
+        "audio": "./dist/Music/future-dollars-zuul.mp3",
         "artist": "Zuul",
         "genre": "Electronic",
         "mood": "Chill"
     },
     {
         "title": "Eternal Rain Dollars",
-        "audio": "./Music/Eternal_Rain.mp3",
+        "audio": "./dist/Music/Eternal_Rain.mp3",
         "artist": "Stefan Biniak",
         "genre": "Electronic",
         "mood": "Chill"
     },
     {
         "title": "Fall Asleep",
-        "audio": "./Music/Chill_Piano.mp3",
+        "audio": "./dist/Music/Chill_Piano.mp3",
         "artist": "Tokyo Music Walker",
         "genre": "Piano",
         "mood": "Chill"
     },
     {
         "title": "Spring Joy Flowers",
-        "audio": "./Music/Spring_Joy_Flowers.mp3",
+        "audio": "./dist/Music/Spring_Joy_Flowers.mp3",
         "artist": "Tokyo Music Walker",
         "genre": "Piano",
         "mood": "Chill"
     },
     {
         "title": "Deep House Trance Type Beat",
-        "audio": "./Music/Deep_House_Type_Beat_-_Trance.mp3",
+        "audio": "./dist/Music/Deep_House_Type_Beat_-_Trance.mp3",
         "artist": "Royalty Free Music",
         "genre": "Electronic",
         "mood": "Dark"
     },
     {
         "title": "Deep House Trance Type Beat",
-        "audio": "./Music/Would_I_Lie_To_You_Deep_House_Remix__Free_To_Use.mp3",
+        "audio": "./dist/Music/Would_I_Lie_To_You_Deep_House_Remix__Free_To_Use.mp3",
         "artist": "Christian Joseph",
         "genre": "Electronic",
         "mood": "Dark"
