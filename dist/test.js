@@ -107,7 +107,9 @@ document.addEventListener('keypress', event => {
         nextSong()
     } else if (name === 'b') {
         nextBackground()
-    } 
+    } else if (name === 'm') {
+        muteSong()
+    }
 })
 
 startButton.addEventListener('click', e => {
@@ -120,8 +122,7 @@ startButton.addEventListener('click', e => {
 
 })
 
-volumeButton.addEventListener('click', e => {
-    // console.log(currentSong.volume)
+function muteSong() {
     let previousVolume = currentSong.volume
     if(previousVolume === 0) {
         currentSong.volume = volumes[volumes.length - 1]
@@ -131,6 +132,11 @@ volumeButton.addEventListener('click', e => {
         currentSong.volume = 0
         volume_slider.value = 0
     }
+}
+
+volumeButton.addEventListener('click', e => {
+    // console.log(currentSong.volume)
+    muteSong()
 })
 
 // changeButtom.addEventListener('click', e => {
