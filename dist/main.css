@@ -1,0 +1,349 @@
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+body {
+  background-image: url("./dkfm_wip_black.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#info {
+  position: relative;
+  font-size: 50px;
+  /* display: none; */
+  color: white;
+}
+
+#info_button {
+  position: absolute;
+  bottom: 8%;
+  right: 3%;
+}
+
+#top_logo {
+  display: none;
+  height: 100px;
+  width: auto;
+  left: 10%;
+}
+
+#mood {
+  padding: 0;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  border-color: #7c7c7c;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
+  font-family: "Roboto", sans-serif;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
+#genre {
+  font-size: 16px;
+  border-color: #7c7c7c;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+#start_button {
+  font-size: 16px;
+  display: block;
+  border-color: #7c7c7c;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
+  font-family: "Roboto", sans-serif;
+  left: 30%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  /* margin:auto; */
+  position: fixed;
+  bottom: 10%;
+  align-items: center;
+  left: 40%;
+  z-index: 5;
+}
+
+.fadeIn {
+  animation: fadeIn 5s both;
+}
+
+.fadeOut {
+  animation: fadeOut 3s both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    background-color: purple;
+  }
+  50% {
+    opacity: 1;
+    background-color: red;
+  }
+  100% {
+    opacity: 1;
+    background-color: blue;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* -----------------^^this is fading animations */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.song_info {
+  top: 90%;
+  left: 0;
+  position: absolute;
+  width: 25%;
+  padding: 15px 0;
+  /* background-color: black; */
+  /* opacity: 50%; */
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.song_title {
+  float: left;
+  padding-right: 15px;
+}
+
+.now_playing > div {
+  font-style: italic;
+}
+
+.slider_container {
+  float: right;
+}
+
+#dans_links {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  font-size: 30px;
+  display: none;
+  z-index: 7;
+}
+
+#linkedin {
+  color: white;
+}
+
+#github {
+  color: white;
+}
+
+#play_pauseButton {
+  padding-right: 20px;
+  background: transparent;
+  color: white;
+  border: transparent 3px outset;
+  box-shadow: 3px 2px 2px 2px rgba(0, 0, 0, 0.9019607843);
+}
+
+#skip_button {
+  padding-right: 20px;
+  background: transparent;
+  color: white;
+  border: transparent 3px outset;
+  box-shadow: 3px 2px 2px 2px rgba(0, 0, 0, 0.9019607843);
+}
+
+.slider_container {
+  display: inline-block;
+  position: relative;
+}
+
+.slider_container:hover {
+  display: block;
+}
+
+#start_text {
+  text-align: center;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: xx-large;
+  font-style: italic;
+  font-size: 4rem;
+  color: rgb(255, 242, 181);
+  background-image: linear-gradient(rgb(230, 230, 230) 28%, rgb(77, 77, 77) 40%, rgb(233, 230, 230) 54%);
+  /* text-align: center; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5rem;
+  /* display: flex; */
+  position: fixed;
+  left: 20%;
+  bottom: 9%;
+}
+
+#volume_Control {
+  position: absolute;
+  display: none;
+  top: 100%;
+  border: 1px solid #aaa;
+  background: #dedede;
+  width: 40px;
+}
+
+#volume {
+  background: transparent;
+  color: white;
+  border: transparent 3px outset;
+  box-shadow: 3px 2px 2px 2px rgba(0, 0, 0, 0.9019607843);
+}
+
+.slider_container:hover #volume_slider {
+  display: inline-block;
+}
+
+#volume_slider {
+  display: none;
+  transition: all 1s ease-in-out;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.5;
+}
+
+.music_player {
+  top: 88%;
+  position: absolute;
+}
+
+.song_content {
+  display: block;
+  width: 100%;
+  transform: translateX(100%);
+  animation: move 10s linear infinite;
+}
+
+.station_title {
+  float: left;
+  padding-right: 15px;
+}
+
+@keyframes move {
+  to {
+    transform: translateX(-100%);
+  }
+}
+/* ------------ this is scrolling text ^^^^ */
+#dkfm {
+  display: none;
+  align-items: center;
+  bottom: 10%;
+  z-index: 6;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  /* place-items: center; */
+}
+
+/* .music__title {
+  color: var(--blue);
+  background-color: var(--light);
+  padding: 1.5rem 2.5rem;
+  width: 100%;
+  letter-spacing: -1px;
+  border-radius: var(--radius);
+  text-align: center;
+} */
+.music__player {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  /* display: grid; */
+  /* grid-gap: 1.5rem; */
+  /* margin: 1.5rem;
+  position: relative;
+  z-index: 10; */
+  /* max-width: 500px;
+  min-width: 40vw; */
+  /* background-color: var(--light); */
+  /* box-shadow: 0px 4px 4px var(--dark); */
+  /* border-radius: var(--radius); */
+  /* width: 85%; */
+  /* max-width: 250px; */
+  /* margin: -5rem auto 0; */
+  /* padding: 0.5rem 1rem; */
+  /* position: relative; */
+  /* z-index: initial; */
+  /* display: grid;
+  grid-template-columns: auto auto auto;
+  place-items: center;
+  grid-gap: 1rem;
+  transition: var(--transition); */
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#instructions > p {
+  display: block;
+  font-size: small;
+  text-align: center;
+  top: 5%;
+  left: 10%;
+}
