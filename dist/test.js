@@ -176,18 +176,19 @@ function toggleInstrunctions() {
 document.addEventListener('keypress', event => {
     var name = event.key;
     var code = event.code;
+    
 
     if(name === 'p') {
         playPause()
-    } else if (name === 'n') {
+    } else if (name === 'n' || name === 'N') {
         nextSong()
-    } else if (name === 't') {
+    } else if (name === 't' || name === 'T') {
         toggleInstrunctions()
-    } else if (name === 'b') {
+    } else if (name === 'b' || name === 'B') {
         nextBackground()
-    } else if (name === 'm') {
+    } else if (name === 'm' || name === 'M') {
         muteSong()
-    } else if (name === 'f') {
+    } else if (name === 'f' || name === 'F') {
         if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
          if (document.documentElement.requestFullScreen) {  
