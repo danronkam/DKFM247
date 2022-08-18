@@ -380,6 +380,9 @@ function pauseSong() {
 }
 
 function nextSong() {
+    if(!playlist) {
+        playlist = songs
+    }
     if (playlistIdx < playlist.length - 1) {
         playlistIdx += 1
     } else {
