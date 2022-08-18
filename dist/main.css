@@ -4,6 +4,9 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 body {
   background-image: url("./dkfm_wip_black.gif");
   background-position: center;
@@ -193,6 +196,7 @@ p {
   color: rgb(255, 242, 181);
   background-image: linear-gradient(rgb(230, 230, 230) 28%, rgb(77, 77, 77) 40%, rgb(233, 230, 230) 54%);
   /* text-align: center; */
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5rem;
