@@ -5,34 +5,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DK FM</title>
+    <link rel="icon" type="image/x-icon" href="./dkfm_wip_black.gif">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="/src/index.scss" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body class="body">
-    <!-- <button id="change">CHANGE BACKGROUND</button> -->
+    <div id="instructions">
+      <p>  Use the drop down menus to select the music you're in the mood for
+        Click the logo in the top left to start over <br>
+        <br>
+        HotKeys : <br>
+        B: Change Background N: Next Song M: Mute P: Pause F: Full Screen<br>
+        Click the smiley to toggle instructions
+
+    </div>
+
+    <div >
+      <img id="top_logo" src="./dkfm_wip_white.gif" alt="">
+    </div>
+
+    <div id=""full_screen> 
+      <i class="far fa-expand-arrows-alt"></i>    </div>
+  
 
     <div class="login" id="login">
       <div class="animated fadeIn" >
-        <p>select your experience</p>
+        <div id="start_text"><p>select your experience</p></div>
         <div class="animated ">
           <form id='session_start' >
             <select class="mood_selector" name="mood" id="mood" data-id="mood">
-              <option value="selected" selected="selected">Mood</option>
+              <option selected="true" disabled="disabled">Mood</option>
               <option value="Chill" >Chill</option>
-              <option value="Relaxing">Relaxing</option>
               <option value="Dark">Dark</option>
             </select>  
             <select class="genre_selector" name="genre" id="genre">
-              <option value="selected" selected="selected">Genre</option>
+              <option value="selected" selected="selected" disabled>Genre</option>
               <option value="Piano">Piano</option>
-              <option value="Chill">Electronic</option>
+              <option value="Electronic">Electronic</option>
             </select>  
-      <button id="start_button">Take Me Away</button>
+            <button id="start_button">Take Me Away</button>
       </form>
       </div>
     </div>
@@ -89,7 +106,7 @@
     <a href="https://github.com/danronkam/" id="github"><i class="fab fa-github-alt"></i></a>
   </div>
 
-  <div id="info">
+  <div class="fadeIn" id="info">
     <i class="fas fa-flushed" id="info_button"></i>
   </div>
 

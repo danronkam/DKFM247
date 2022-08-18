@@ -10,6 +10,9 @@ const seek_slider = document.querySelector('seek_slider')
 const volume_slider = document.querySelector('#volume_slider')
 const dans_links = document.getElementById('dans_links')
 const info = document.getElementById('info')
+const top_logo = document.getElementById('top_logo')
+const info_button = document.getElementById('info_button')
+const instructions = document.getElementById('instructions')
 
 let body = document.body
 let station_title = document.querySelector(".station_title");
@@ -27,7 +30,7 @@ let songs = [
         "audio": "./Music/Abdelazer.mp3",
         "artist": "Philip Adler",
         "genre": "Piano",
-        "mood": "Relaxing"
+        "mood": "Chill"
     },
     {
         "title": "DROPdrip",
@@ -42,7 +45,49 @@ let songs = [
         "artist": "Alex Benedict",
         "genre": "Piano",
         "mood": "Dark"
-    }
+    },
+    {
+        "title": "Future Dollars",
+        "audio": "./Music/future-dollars-zuul.mp3",
+        "artist": "Zuul",
+        "genre": "Electronic",
+        "mood": "Chill"
+    },
+    {
+        "title": "Eternal Rain Dollars",
+        "audio": "./Music/Eternal_Rain.mp3",
+        "artist": "Stefan Biniak",
+        "genre": "Electronic",
+        "mood": "Chill"
+    },
+    {
+        "title": "Fall Asleep",
+        "audio": "./Music/Chill_Piano.mp3",
+        "artist": "Tokyo Music Walker",
+        "genre": "Piano",
+        "mood": "Chill"
+    },
+    {
+        "title": "Spring Joy Flowers",
+        "audio": "./Music/Spring_Joy_Flowers.mp3",
+        "artist": "Tokyo Music Walker",
+        "genre": "Piano",
+        "mood": "Chill"
+    },
+    {
+        "title": "Deep House Trance Type Beat",
+        "audio": "./Music/Deep_House_Type_Beat_-_Trance.mp3",
+        "artist": "Royalty Free Music",
+        "genre": "Electronic",
+        "mood": "Dark"
+    },
+    {
+        "title": "Deep House Trance Type Beat",
+        "audio": "./Music/Would_I_Lie_To_You_Deep_House_Remix__Free_To_Use.mp3",
+        "artist": "Christian Joseph",
+        "genre": "Electronic",
+        "mood": "Dark"
+    },
 ]
 
 let images = [
@@ -54,7 +99,7 @@ let images = [
     {
         "title": "People in the Sun",
         "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-3.gif",
-        "mood": "Relaxing"
+        "mood": "Chill"
     },
     {
         "title": "pixel scenery",
@@ -88,7 +133,7 @@ let images = [
 // })
 
 let playlist;
-let backgrounds;
+let backgrounds = [];
 let playlistIdx = 0;
 let backgroundIDX = 0;
 let isPlaying = false;
@@ -97,20 +142,36 @@ let volumes = [];
 
 startForm.addEventListener('submit', e => {
     let mood = document.querySelector('#mood').value
-    console.log(mood)
+    let genre = document.querySelector('#genre').value
+
+
     e.preventDefault();
-    console.log(e, "EVENT!!!")
+
     // console.log(e.data())
 
     // const mood = e.getElementById('mood')
     // const genre = e.getElementById('genre')
-    console.log(mood)
-    getPlaylist(mood)
+    // console.log(mood)
+    getPlaylist(mood, genre)
     getBackgrounds(mood)
     getSong(playlistIdx)
     playSong()
     nextBackground()
 })
+
+info_button.addEventListener('click', e=> {
+
+    toggleInstrunctions()
+})
+
+function toggleInstrunctions() {
+    if(!instructions.style.display ||       instructions.style.display === 'block' ) {
+        instructions.style.display = 'none'
+    } else {
+        instructions.style.display = 'block'
+    }
+
+}
 
 document.addEventListener('keypress', event => {
     var name = event.key;
@@ -124,19 +185,66 @@ document.addEventListener('keypress', event => {
         nextBackground()
     } else if (name === 'm') {
         muteSong()
+    } else if (name === 'f') {
+        if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+         if (document.documentElement.requestFullScreen) {  
+           document.documentElement.requestFullScreen();  
+         } else if (document.documentElement.mozRequestFullScreen) {  
+           document.documentElement.mozRequestFullScreen();  
+         } else if (document.documentElement.webkitRequestFullScreen) {  
+           document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+         }  
+       } else {  
+         if (document.cancelFullScreen) {  
+           document.cancelFullScreen();  
+         } else if (document.mozCancelFullScreen) {  
+           document.mozCancelFullScreen();  
+         } else if (document.webkitCancelFullScreen) {  
+           document.webkitCancelFullScreen();  
+         }  
+       }  
     }
 })
+
+// function toggleFullScreen() {
+//     if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+//     (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+//      if (document.documentElement.requestFullScreen) {  
+//        document.documentElement.requestFullScreen();  
+//      } else if (document.documentElement.mozRequestFullScreen) {  
+//        document.documentElement.mozRequestFullScreen();  
+//      } else if (document.documentElement.webkitRequestFullScreen) {  
+//        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+//      }  
+//    } else {  
+//      if (document.cancelFullScreen) {  
+//        document.cancelFullScreen();  
+//      } else if (document.mozCancelFullScreen) {  
+//        document.mozCancelFullScreen();  
+//      } else if (document.webkitCancelFullScreen) {  
+//        document.webkitCancelFullScreen();  
+//      }  
+// }
+// }
 
 startButton.addEventListener('click', e => {
     let login = document.getElementById("login")
     let dkfm = document.getElementById("dkfm")
     login.classList.add('fadeOut')
     dkfm.classList.add('fadeIn')
+    top_logo.classList.add('fadeIn')
     login.style.display='none'
     dkfm.style.display = "flex"
     dans_links.style.display = 'block'
     info.classList.add('fadeIn')
     dkfm.style.display = "flex"
+    top_logo.style.display = "flex"
+})
+
+top_logo.addEventListener('click', e => {
+    
+    window.location.reload()
 })
 
 
@@ -153,7 +261,6 @@ function muteSong() {
 }
 
 volumeButton.addEventListener('click', e => {
-    // console.log(currentSong.volume)
     muteSong()
 })
 
@@ -161,26 +268,44 @@ volumeButton.addEventListener('click', e => {
 //     nextBackground()
 // })
 
-function getPlaylist(mood) {
-    return playlist = songs.filter(song => song.mood === mood)
+function getPlaylist(mood, genre) {
+    return playlist = songs.filter(song => song.mood === mood && song.genre === genre )
 }
 
 function getBackgrounds(mood) {
     return backgrounds = images.filter(image => image.mood === mood)
 }
 
+
+
+
+
 function nextBackground() {
-    if(!backgrounds) {
+    if(backgrounds.length === 0) {
         backgrounds = images
     }
-
-    if(backgroundIDX === images.length - 1) {
-        backgroundIDX = 0
-        body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
-    } else {
+    // if(backgroundIDX > backgrounds.length) {
+    //     backgroundIDX = 0
+    // }
+    // if(backgrounds.length === 0) {
+    //     backgrounds = images
+    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
+    //     backgroundIDX += 1
+    // } else if (backgrounds.length === 1) {
+    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
+    // }else  if(backgroundIDX === images.length - 1) {
+    //     backgroundIDX = 0
+    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
+    // } else {
+    //     backgroundIDX += 1
+    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
+    // }
+    if (backgroundIDX < backgrounds.length - 1) {
         backgroundIDX += 1
-        body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
+    } else {
+        backgroundIDX = 0
     }
+    body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
 }
 
 function getSong(playlistIdx) {
@@ -194,7 +319,6 @@ function getSong(playlistIdx) {
 
     songTitle.textContent = playlist[playlistIdx].title
     songArtist.textContent = playlist[playlistIdx].artist
-    console.log(currentSong)
     currentSong.addEventListener("ended", nextSong)
 }
 
@@ -254,7 +378,7 @@ function pauseSong() {
 }
 
 function nextSong() {
-    if (playlistIdx < songs.length - 1) {
+    if (playlistIdx < playlist.length - 1) {
         playlistIdx += 1
     } else {
         playlistIdx = 0

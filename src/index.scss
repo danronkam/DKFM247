@@ -14,6 +14,9 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 /*!*************************************************************************************************************************************!*\
+  !*** css ./css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 /*!*************************************************************************************************************************************!*\
@@ -26,20 +29,28 @@
     background-size: cover;
   }
   
-  #info{
+  #info {
     position: relative;
     font-size: 50px;
-    display: none;
+    /* display: none; */
     color: white;
   }
   
-  #info_button{
+  #info_button {
     position: absolute;
     bottom: 8%;
     right: 3%;
   }
   
+  #top_logo{
+    display: none;
+    height: 100px;
+    width: auto;
+    left: 10%;
+  }
+  
   #mood {
+    color: rgb(255, 255, 255);
     border-color: #7c7c7c;
     background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
     font-family: "Roboto", sans-serif;
@@ -72,6 +83,7 @@
     bottom: 10%;
     align-items: center;
     left: 40%;
+    z-index: 5;
   }
   
   .fadeIn {
@@ -147,6 +159,7 @@
     width: 100px;
     font-size: 30px;
     display: none;
+    z-index: 7;
   }
   
   #linkedin {
@@ -180,6 +193,10 @@
   
   .slider_container:hover {
     display: block;
+  }
+  
+  #start_text{
+    text-align: center;
   }
   
   p {
@@ -254,7 +271,8 @@
   #dkfm {
     display: none;
     align-items: center;
-    bottom: 0;
+    bottom: 10%;
+    z-index: 6;
   }
   
   body {
@@ -312,12 +330,10 @@
     border-radius: 50%;
   }
   
-  /* Change the mouse cursor to a pointer
-     when hovered over */
-  i.fa-play-circle,
-  i.fa-pause-circle,
-  i.fa-step-forward,
-  i.fa-step-backward {
-    cursor: pointer;
+  #instructions > p {
+    display: block;
+    font-size: small;
+    text-align: center;
+    top: 5%;
+    left: 10%;
   }
-  
