@@ -13,14 +13,38 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-
-
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
   body {
-    background-image: url("https://cdn.vox-cdn.com/thumbor/qDV-Av0h_Qf1u6MUJ9L_D7uLM-w=/0x0:1200x800/1200x800/filters:focal(428x63:620x255)/cdn.vox-cdn.com/uploads/chorus_image/image/66160336/image__13_.0.png");
+    background-image: url("./dkfm_wip_black.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+  
+  #mood{ 
+    border-color: #7c7c7c;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(230, 230, 230)), to(rgb(0, 0, .25)));
+    font-family: 'Roboto', sans-serif;
+  
+  }
+  
+  #genre{
+    border-color: #7c7c7c;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(230, 230, 230)), to(rgb(0, 0, .25)));
+    font-family: 'Roboto', sans-serif;
+  
+  }
+  
+  #start_button {
+    display: block;
+    border-color: #7c7c7c;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(230, 230, 230)), to(rgb(0, 0, .25)));
+    font-family: 'Roboto', sans-serif;
+  
+  }
+  
   
   .login {
     display: flex;
@@ -33,7 +57,7 @@
   }
   
   .fadeIn {
-    animation: fadeIn 3s both;
+    animation: fadeIn 5s both;
   }
   
   .fadeOut {
@@ -75,7 +99,6 @@
   .song_info {
     top: 90%;
     left: 0;
-   
     position: absolute;
     width: 25%;
     padding: 15px 0;
@@ -93,7 +116,7 @@
     font-style: italic;
   }
   
-  .slider_container{
+  .slider_container {
     float: right;
   }
   
@@ -104,6 +127,7 @@
     height: 100px;
     width: 100px;
     font-size: 30px;
+    display: none;
   }
   
   #linkedin {
@@ -114,13 +138,12 @@
     color: white;
   }
   
-  
   #play_pauseButton {
     padding-right: 20px;
     background: transparent;
     color: white;
     border: transparent 3px outset;
-    box-shadow: 3px 2px 2px 2px #000000e6;
+    box-shadow: 3px 2px 2px 2px rgba(0, 0, 0, 0.9019607843);
   }
   
   #skip_button {
@@ -128,37 +151,55 @@
     background: transparent;
     color: white;
     border: transparent 3px outset;
-    box-shadow: 3px 2px 2px 2px #000000e6;
+    box-shadow: 3px 2px 2px 2px rgba(0, 0, 0, 0.9019607843);
   }
   
-  .slider_container{
+  .slider_container {
     display: inline-block;
     position: relative;
-  
   }
   
-  .slider_container:hover  {
+  .slider_container:hover {
     display: block;
   }
   
-  #volume_Control{
+  p{
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    font-style: italic;
+    font-size: 4rem;
+    color: rgb(255,242,181);
+    background-image: linear-gradient(rgb(230,230,230) 28%, 
+      rgb(77,77,77) 40%,
+      rgb(233,230,230) 54%);
+    /* text-align: center; */
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .5rem;
+    /* display: flex; */
+    position: fixed;
+    left: 20%;
+    bottom: 9%;
+  
+  }
+  
+  #volume_Control {
     position: absolute;
     display: none;
     top: 100%;
     border: 1px solid #aaa;
     background: #dedede;
     width: 40px;
-  
-  }  
+  }
   
   #volume {
     background: transparent;
     color: white;
     border: transparent 3px outset;
-    box-shadow: 3px 2px 2px 2px #000000e6;
+    box-shadow: 3px 2px 2px 2px rgba(0, 0, 0, 0.9019607843);
   }
   
-  .slider_container:hover #volume_slider{
+  .slider_container:hover #volume_slider {
     display: inline-block;
   }
   
@@ -168,15 +209,13 @@
     appearance: none;
     height: 5px;
     background: black;
-    opacity: .5;
+    opacity: 0.5;
   }
   
   .music_player {
     top: 88%;
     position: absolute;
   }
-  
-  
   
   .song_content {
     display: block;
@@ -185,7 +224,7 @@
     animation: move 10s linear infinite;
   }
   
-  .station_title{
+  .station_title {
     float: left;
     padding-right: 15px;
   }
@@ -202,8 +241,6 @@
     bottom: 0;
   }
   
-  
-  
   body {
     height: 100vh;
     display: grid;
@@ -219,7 +256,6 @@
     border-radius: var(--radius);
     text-align: center;
   } */
-  
   .music__player {
     align-items: center;
     display: flex;
@@ -247,8 +283,6 @@
     transition: var(--transition); */
   }
   
-  
-   
   /* Modify the appearance of the slider thumb */
   .seek_slider::-webkit-slider-thumb,
   .volume_slider::-webkit-slider-thumb {

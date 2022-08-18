@@ -8,6 +8,7 @@ const changeButtom = document.getElementById('change')
 const volumeButton = document.getElementById('volume')
 const seek_slider = document.querySelector('seek_slider')
 const volume_slider = document.querySelector('#volume_slider')
+const dans_links = document.getElementById('dans_links')
 
 let body = document.body
 let station_title = document.querySelector(".station_title");
@@ -48,8 +49,8 @@ let images = [
         "mood": "Relaxing"
     },
     {
-        "title": "Nighthawks Diner",
-        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-2.gif",
+        "title": "pixel scenery",
+        "source": "https://64.media.tumblr.com/673304829a5f7d502979e59c8eaac252/tumblr_mgigxnLRKw1qbzzgco1_1280.gifv",
         "mood": "Chill"
     },
     {
@@ -119,6 +120,7 @@ startButton.addEventListener('click', e => {
     dkfm.classList.add('fadeIn')
     login.style.display='none'
     dkfm.style.display = "flex"
+    dans_links.style.display = 'block'
 
 })
 
