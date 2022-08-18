@@ -181,6 +181,8 @@ document.addEventListener('keypress', event => {
         playPause()
     } else if (name === 'n') {
         nextSong()
+    } else if (name === 't') {
+        toggleInstrunctions()
     } else if (name === 'b') {
         nextBackground()
     } else if (name === 'm') {
