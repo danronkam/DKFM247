@@ -196,7 +196,7 @@ p {
   color: rgb(255, 242, 181);
   background-image: linear-gradient(rgb(230, 230, 230) 28%, rgb(77, 77, 77) 40%, rgb(233, 230, 230) 54%);
   /* text-align: center; */
-  background-clip: text;
+  background-clip: tex;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5rem;
@@ -322,8 +322,8 @@ body {
 
 #instructions > p {
   display: block;
-  font-size: small;
+  font-size: 14pt;
   text-align: center;
   top: 5%;
-  left: 10%;
+  left: 4%;
 }

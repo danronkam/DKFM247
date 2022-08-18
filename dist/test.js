@@ -180,6 +180,8 @@ document.addEventListener('keypress', event => {
 
     if(name === 'p') {
         playPause()
+    } else if (name === 'r' || name === 'R') {
+        window.location.reload()
     } else if (name === 'n' || name === 'N') {
         nextSong()
     } else if (name === 't' || name === 'T') {
