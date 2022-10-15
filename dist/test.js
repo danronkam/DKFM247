@@ -118,19 +118,6 @@ let images = [
         "mood": "Dark"
     }
 ]
-// $document.ready(function () {
-//     $("form").submit(function (event) {
-//         event.preventDefault()
-
-//         var mood = document.getElementById('mood').value
-//         var genre = document.getElementById('genre').value
-
-
-//         $.get("process.php", { mood: mood, genre: genre }, function (data) {
-//             console.log(data)
-//         })
-//     })
-// })
 
 let playlist;
 let backgrounds = [];
@@ -141,22 +128,32 @@ let currentSong = document.createElement('audio');
 let volumes = [];
 
 startForm.addEventListener('submit', e => {
+    e.preventDefault();
     let mood = document.querySelector('#mood').value
     let genre = document.querySelector('#genre').value
 
-
-    e.preventDefault();
-
-    // console.log(e.data())
-
-    // const mood = e.getElementById('mood')
-    // const genre = e.getElementById('genre')
-    // console.log(mood)
-    getPlaylist(mood, genre)
-    getBackgrounds(mood)
-    getSong(playlistIdx)
-    playSong()
-    nextBackground()
+    if(mood === "Mood" || genre === 'Genre'){
+        console.log("yay")
+    } else {
+        console.log(mood, genre)
+        getPlaylist(mood, genre)
+        getBackgrounds(mood)
+        getSong(playlistIdx)
+        playSong()
+        nextBackground()
+        let login = document.getElementById("login")
+        let dkfm = document.getElementById("dkfm")
+        login.classList.add('fadeOut')
+        dkfm.classList.add('fadeIn')
+        top_logo.classList.add('fadeIn')
+        login.style.display='none'
+        dkfm.style.display = "flex"
+        dans_links.style.display = 'block'
+        info.classList.add('fadeIn')
+        dkfm.style.display = "flex"
+        top_logo.style.display = "flex"
+    }
+    
 })
 
 info_button.addEventListener('click', e=> {
@@ -212,40 +209,21 @@ document.addEventListener('keypress', event => {
     }
 })
 
-// function toggleFullScreen() {
-//     if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
-//     (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-//      if (document.documentElement.requestFullScreen) {  
-//        document.documentElement.requestFullScreen();  
-//      } else if (document.documentElement.mozRequestFullScreen) {  
-//        document.documentElement.mozRequestFullScreen();  
-//      } else if (document.documentElement.webkitRequestFullScreen) {  
-//        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
-//      }  
-//    } else {  
-//      if (document.cancelFullScreen) {  
-//        document.cancelFullScreen();  
-//      } else if (document.mozCancelFullScreen) {  
-//        document.mozCancelFullScreen();  
-//      } else if (document.webkitCancelFullScreen) {  
-//        document.webkitCancelFullScreen();  
-//      }  
-// }
-// }
 
-startButton.addEventListener('click', e => {
-    let login = document.getElementById("login")
-    let dkfm = document.getElementById("dkfm")
-    login.classList.add('fadeOut')
-    dkfm.classList.add('fadeIn')
-    top_logo.classList.add('fadeIn')
-    login.style.display='none'
-    dkfm.style.display = "flex"
-    dans_links.style.display = 'block'
-    info.classList.add('fadeIn')
-    dkfm.style.display = "flex"
-    top_logo.style.display = "flex"
-})
+
+// startButton.addEventListener('click', e => {
+//     let login = document.getElementById("login")
+//     let dkfm = document.getElementById("dkfm")
+//     login.classList.add('fadeOut')
+//     dkfm.classList.add('fadeIn')
+//     top_logo.classList.add('fadeIn')
+//     login.style.display='none'
+//     dkfm.style.display = "flex"
+//     dans_links.style.display = 'block'
+//     info.classList.add('fadeIn')
+//     dkfm.style.display = "flex"
+//     top_logo.style.display = "flex"
+// })
 
 top_logo.addEventListener('click', e => {
     
@@ -289,22 +267,6 @@ function nextBackground() {
     if(backgrounds.length === 0) {
         backgrounds = images
     }
-    // if(backgroundIDX > backgrounds.length) {
-    //     backgroundIDX = 0
-    // }
-    // if(backgrounds.length === 0) {
-    //     backgrounds = images
-    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
-    //     backgroundIDX += 1
-    // } else if (backgrounds.length === 1) {
-    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
-    // }else  if(backgroundIDX === images.length - 1) {
-    //     backgroundIDX = 0
-    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
-    // } else {
-    //     backgroundIDX += 1
-    //     body.style.backgroundImage = `url(${backgrounds[backgroundIDX].source})`
-    // }
     if (backgroundIDX < backgrounds.length - 1) {
         backgroundIDX += 1
     } else {
@@ -346,23 +308,7 @@ function playPause() {
     } else {
         pauseSong()
     }
-    // var playPromise = currentSong.play();
-
-    // if(playPromise != undefined) {
-    //     playPromise.then(_ => {
-    //         pauseSong()
-    //     })
-    //     .catch(error => {
-
-    //     })
-    // }
-    // // if(!isPlaying) {
-    // //     playSong();
-    // // } else {
-    //     else {
-    //     playSong();
-
-    // }
+   
 }
 
 function playSong() {
