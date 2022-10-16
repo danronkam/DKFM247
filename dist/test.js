@@ -235,9 +235,6 @@ volumeButton.addEventListener('click', e => {
     muteSong()
 })
 
-// changeButtom.addEventListener('click', e => {
-//     nextBackground()
-// })
 
 function getPlaylist(mood, genre) {
     return playlist = songs.filter(song => song.mood === mood && song.genre === genre )
@@ -277,12 +274,6 @@ function getSong(playlistIdx) {
     currentSong.addEventListener("ended", nextSong)
 }
 
-// function reset() {
-//     currentTime.textContent = "00:00";
-//     totalDuration.textContent = "00:00"
-//     seekSlider.value = 0;
-// }
-
 function playPause() {
     if (playlist === undefined) {
         playlist = songs
@@ -316,15 +307,11 @@ function playSong() {
     } 
     currentSong.play();
     isPlaying = true;
-
-    // playpauseButton.innerHTML = <i class="fas fa-pause"></i>
 }
 
 function pauseSong() {
     currentSong.pause();
     isPlaying = false;
-
-    // playpauseButton.innerHTML = <i class="fas fa-play"></i>
 }
 
 function nextSong() {
@@ -348,43 +335,11 @@ function nextSong() {
         playlistIdx = 0
     }
     getSong(playlistIdx);
-    // progressBar.style.width = '0%'
     playSong()
 }
 
 
 function setVolume() {
-    // Set the volume according to the
-    // percentage of the volume slider set
+
     currentSong.volume = volume_slider.value / 100;
   }
-
-
-
-
-// TESTS PLEASE IGNORE_______________________________________________
-// const button1 = document.getElementById('button1');
-// let audio1 = new Audio()
-// audio1.src = './Music/01_DROPdrip.mp3'
-// const audioCtx = new window.AudioContext();
-// console.log(audioCtx)
-
-// button1.addEventListener('click', function() {
-//     audio1.play()
-//     audio1.addEventListener('playing', function() {
-//         console.log('Audio 1 Started Playing')
-//     })
-//     audio1.addEventListener('ended', function() {
-//         console.log('Audio 1 Ended!')
-//     })
-// })
-
-// const button2= document.getElementById('button2');
-
-
-
-// button2.addEventListener('click', playSong);
-
-// function playSong() {
-//     audio1.play()
-// }

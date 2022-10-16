@@ -26,9 +26,9 @@
   </head>
 
   <body class="body">
-    <div id="instructions">
+    <div id="instructions" class="animated fadeIn">
         <p>  Welcome to DK-FM <br />
-        Use the drop down menus to select the music you're in the mood for <br>
+       select whatever you're in the mood for, and relax <br>
         <br>
         HotKeys : <br>
         B: Change Background N: Next Song R: Reset M: Mute <br>
@@ -74,11 +74,11 @@
     <container id="dkfm">
       <div class="music_player">
 
-        <button id="play_pauseButton" onclick="playPause()">
+        <button id="play_pauseButton" class="music_player_buttons" onclick="playPause()">
           <i class="fas fa-play"></i> 
         </button>
 
-        <button id="skip_button" onclick="nextSong()">
+        <button id="skip_button" class="music_player_buttons" onclick="nextSong()">
           <i class="fas fa-step-forward"></i> 
         </button>
 
@@ -86,7 +86,7 @@
         
         <div class="slider_container">
           
-          <button id="volume" onclick="">
+          <button id="volume" class="music_player_buttons" onclick="">
             <i class="fas fa-volume-up"></i>
           </button>
 

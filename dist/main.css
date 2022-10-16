@@ -33,6 +33,7 @@ body {
   height: 100px;
   width: auto;
   left: 10%;
+  cursor: pointer;
 }
 
 #mood {
@@ -61,12 +62,14 @@ body {
 }
 
 #start_button {
-  font-size: 16px;
+  font-size: 1vw;
   border-color: #7c7c7c;
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   margin-top: 3.5vh;
+  padding: 0.5vw;
+  border-radius: 0.5vw;
 }
 
 .login {
@@ -84,6 +87,9 @@ body {
   position: absolute;
   padding-left: 43vw;
   z-index: -1;
+  color: red;
+  font-style: italic;
+  font-family: inherit;
 }
 
 .fadeIn {
@@ -175,6 +181,7 @@ html {
 }
 
 #play_pauseButton {
+  cursor: pointer;
   padding-right: 20px;
   background: transparent;
   color: white;
@@ -183,6 +190,7 @@ html {
 }
 
 #skip_button {
+  cursor: pointer;
   padding-right: 20px;
   background: transparent;
   color: white;
@@ -240,6 +248,7 @@ p {
 }
 
 #volume {
+  cursor: pointer;
   background: transparent;
   color: white;
   border: transparent 3px outset;
@@ -298,7 +307,10 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
 
+.music_player_buttons{
+  font-size: ;
 }
 
 /* Modify the appearance of the slider thumb */
