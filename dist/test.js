@@ -23,6 +23,7 @@ let seekSlider = document.querySelector(".seek_slider");
 let volumeSlider = document.querySelector(".volume_slider");
 let currentTime = document.querySelector(".current_time");
 let totalDuration = document.querySelector(".total_duration");
+let sessionStarted = false
 
 let songs = [
     {
@@ -134,6 +135,8 @@ startForm.addEventListener('submit', e => {
 
     if(mood === "Mood" || genre === 'Genre'){
         console.log("yay")
+        let errors = document.getElementById("errors")
+        errors.style.display = 'block'
     } else {
         console.log(mood, genre)
         getPlaylist(mood, genre)
@@ -210,21 +213,6 @@ document.addEventListener('keypress', event => {
 })
 
 
-
-// startButton.addEventListener('click', e => {
-//     let login = document.getElementById("login")
-//     let dkfm = document.getElementById("dkfm")
-//     login.classList.add('fadeOut')
-//     dkfm.classList.add('fadeIn')
-//     top_logo.classList.add('fadeIn')
-//     login.style.display='none'
-//     dkfm.style.display = "flex"
-//     dans_links.style.display = 'block'
-//     info.classList.add('fadeIn')
-//     dkfm.style.display = "flex"
-//     top_logo.style.display = "flex"
-// })
-
 top_logo.addEventListener('click', e => {
     
     window.location.reload()
@@ -298,6 +286,17 @@ function getSong(playlistIdx) {
 function playPause() {
     if (playlist === undefined) {
         playlist = songs
+        let login = document.getElementById("login")
+        let dkfm = document.getElementById("dkfm")
+        login.classList.add('fadeOut')
+        dkfm.classList.add('fadeIn')
+        top_logo.classList.add('fadeIn')
+        login.style.display='none'
+        dkfm.style.display = "flex"
+        dans_links.style.display = 'block'
+        info.classList.add('fadeIn')
+        dkfm.style.display = "flex"
+        top_logo.style.display = "flex"
     }
     if (!currentSong.src) {
         getSong(playlistIdx);
@@ -331,6 +330,17 @@ function pauseSong() {
 function nextSong() {
     if(!playlist) {
         playlist = songs
+        let login = document.getElementById("login")
+        let dkfm = document.getElementById("dkfm")
+        login.classList.add('fadeOut')
+        dkfm.classList.add('fadeIn')
+        top_logo.classList.add('fadeIn')
+        login.style.display='none'
+        dkfm.style.display = "flex"
+        dans_links.style.display = 'block'
+        info.classList.add('fadeIn')
+        dkfm.style.display = "flex"
+        top_logo.style.display = "flex"
     }
     if (playlistIdx < playlist.length - 1) {
         playlistIdx += 1

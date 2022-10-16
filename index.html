@@ -27,12 +27,12 @@
 
   <body class="body">
     <div id="instructions">
-      <p>  Use the drop down menus to select the music you're in the mood for
+        <p>  Welcome to DK-FM <br />Use the drop down menus to select the music you're in the mood for
         Click the logo in the top left to start over <br>
         <br>
         HotKeys : <br>
-        B: Change Background N: Next Song R: Reset M: Mute P: Pause F: Full Screen<br>
-        Press T or Click the smiley to toggle instructions
+        B: Change Background N: Next Song R: Reset M: Mute <br>
+        P: Pause F: Full Screen T: Toggle instructions
 
     </div>
 
@@ -40,14 +40,18 @@
       <img id="top_logo" src="./dist/dkfm_wip_white.gif" alt="">
     </div>
 
-    <div id=""full_screen> 
-      <i class="far fa-expand-arrows-alt"></i>    </div>
+
   
 
     <div class="login" id="login">
       <div class="animated fadeIn" >
-        <div id="start_text"><p>select your experience</p></div>
-        <div class="animated ">
+        <div id="start_text">
+          select your experience
+        </div>
+        <div id="errors">
+          Please Select a Mood and Genre
+        </div>
+        <div class="form-container">
           <form id='session_start' >
             <select class="mood_selector" name="mood" id="mood" data-id="mood">
               <option selected="true" disabled="disabled">Mood</option>
@@ -59,9 +63,9 @@
               <option value="Piano">Piano</option>
               <option value="Electronic">Electronic</option>
             </select>  
-            <button id="start_button">Take Me Away</button>
-      </form>
-      </div>
+            <input id="start_button" value="Take Me Away" type="submit"></input>
+          </form>
+        </div>
     </div>
   </div>
 
@@ -110,8 +114,8 @@
   </container>
 
   <div id="dans_links">
-    <a href="http://linkedin.com/in/danronkam" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://github.com/danronkam/" id="github"><i class="fab fa-github-alt"></i></a>
+    <a href="http://linkedin.com/in/danronkam" id="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/danronkam/" id="github" target="_blank"><i class="fab fa-github-alt"></i></a>
   </div>
 
   <div class="fadeIn" id="info">

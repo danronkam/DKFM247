@@ -183,6 +183,21 @@
   
   #start_text {
     text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: xx-large;
+    font-style: italic;
+    font-size: 4rem;
+    color: rgb(255, 242, 181);
+    background-image: linear-gradient(rgb(230, 230, 230) 90%, rgb(77, 77, 77) 95%, rgb(135 132 132) 99%);
+    /* text-align: center; */
+    background-clip: tex;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5rem;
+    /* display: flex; */
+    position: fixed;
+    left: 20%;
+    bottom: 9%;
   }
   
   p {
