@@ -19,6 +19,7 @@ body {
   font-size: 50px;
   /* display: none; */
   color: white;
+  cursor: pointer;
 }
 
 #info_button {
@@ -44,6 +45,8 @@ body {
   font-family: "Roboto", sans-serif;
   margin-right: 100px;
   cursor: pointer;
+  /* margin-bottom: 5vh; */
+
 }
 
 #genre {
@@ -54,15 +57,16 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  /* margin-bottom: 5vh; */
 }
 
 #start_button {
   font-size: 16px;
-  display: block;
   border-color: #7c7c7c;
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 230, 230)), to(rgb(0, 0, 0)));
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  margin-top: 3.5vh;
 }
 
 .login {
@@ -72,10 +76,14 @@ body {
 }
 
 #errors {
+  display: block;
+  padding-top: 3.5vw;
   color: white;
   text-align: center;
   display: none;
   position: absolute;
+  padding-left: 43vw;
+  z-index: -1;
 }
 
 .fadeIn {
