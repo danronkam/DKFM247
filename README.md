@@ -1,7 +1,7 @@
 # DKFM247
 DK-FM is a music player that lets users select a genre and mood which plays a continuous curated set of songs and accompanying visuals. While many music players focus on the users and the playlists they make, DK-FM is meant to be set up and forgotten while users focus on other more important things in their lives. Although the playlist won't be user made, they will still have the ability to cycle through the songs and backgrounds in order to create their ideal set up. It’s background music that won't distract you but also won’t put you to sleep. 
 	
-Functionality & MVPs
+[Check it Out!](https://danronkam.github.io/DKFM247/)
 
 With DK-FM, users will be able to :	
 
