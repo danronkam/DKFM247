@@ -4,8 +4,16 @@ DK-FM is a music player that lets users select a genre and mood which plays a co
 [Check it Out!](https://danronkam.github.io/DKFM247/)
 
 # Technologies
+* Javascript
+* HTML & CSS
+# Screenshots
+![image](https://user-images.githubusercontent.com/101153713/196276355-2ffbfcde-fedb-4260-aa3b-97a457dd4383.png)
+![image](https://user-images.githubusercontent.com/101153713/196276575-6b9d38de-2ec9-4644-8435-bb5e143a010f.png)
+
+
 # Features
 ## Music and Background Filters
+Based on filters the users select, backgrounds and music are selected from that seasons featured lists. 
 
 ```
 function getPlaylist(mood, genre) {
@@ -18,7 +26,7 @@ function getBackgrounds(mood) {
 ```
 
 ## Hotkeys
-
+A keypress event listener for all of the applications features
 ```
 document.addEventListener('keypress', event => {
     var name = event.key;
