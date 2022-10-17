@@ -3,75 +3,60 @@ DK-FM is a music player that lets users select a genre and mood which plays a co
 	
 [Check it Out!](https://danronkam.github.io/DKFM247/)
 
-With DK-FM, users will be able to :	
+# Technologies
+# Features
+## Music and Background Filters
 
-    Select a genre and mood which then gets the accompanying playlist from Spotify
-    Users will have access to a music controller that can:
-        play/pause/skip song
-        Adjust/mute volume
-    Users will have access to a visuals controller that can:
-        Select next background or previous background
-        Toggle between moving images or a more static page
-    Toggle between a light and dark mode	
-    Hide all buttons to only show background	
+```
+function getPlaylist(mood, genre) {
+    return playlist = songs.filter(song => song.mood === mood && song.genre === genre )
+}
 
-This project will also include:
-    A landing page explaining the rules
-    A collapsible menu showing the show keys
-    Production Read me
-    Free use images/gifs to be used for backgrounds
+function getBackgrounds(mood) {
+    return backgrounds = images.filter(image => image.mood === mood)
+}
+```
 
-WireFrames:
- 	Landing page https://wireframe.cc/pro/pp/ba2f97dc0572618
-        Textboxes will suggest genres and moods available as they type
-            Toggles button light and dark mode in
-            Begin button causes all text to fade out before starting the visualizers and music
-Session https://wireframe.cc/pro/pp/ba2f97dc0572618
-    Title in top left is hyperlink to reset music player	
-    bottom left corner
-        Song information scrolls horizontally 
-        Song nav bar displays play, pause, and volume controllers
-    Bottom middle   
-        Personal nav links to github, linkedin
-    Bottom Right
-        Assistance button that shows text when hovered over
-        Text Displays hotkeys for controls users have access too
+## Hotkeys
 
-Friday + Weekend
-	-Set up project and webpack
-	-Create two pages, landing page and session page
-		-Create form on landing page to get user input
-		-Create a simple music player working that will play through given playlist with 
-working controller
-	-get canvas to appear and take up 100% of window
-Monday
-	-Start working to connect the pages using information received from landing page to get    the correct playlists
-		- Goal is to enter my mood and have music start playing
-	-assign hotkeys to user controllers
-	-create menu to display hotkey and info on hover over
-Tuesday
-    -Access where we are in the project, if pages are connected and music plays
-        -assure controllers and hot keys are working
-            -start styling the page elements with CSS
-            -start curating the playlists and gifs according to similar moods
-    -if pages still aren't connected
-        -this is the only goal for today, get the pages connected and playing 
-Wednesday
-    -Combing over and CSS day, ensure everything works as expected
-    -create two color scheme to toggle between for day and night mode
-Thursday AM
-    Deploy to github
-    Double check read message and files are updates
+```
+document.addEventListener('keypress', event => {
+    var name = event.key;
 
-
-This project will be implemented with the following technologies:
-    Canvas API to display the animations
-    Web Playback SDK
-    Webpack and Babel to bundle and transpile the source JavaScript 
-    NPM
-    Canvas and Web Audio API
-    
- 
+    if(name === 'p') {
+        playPause()
+    } else if (name === 'r' || name === 'R') {
+        window.location.reload()
+    } else if (name === 'n' || name === 'N') {
+        nextSong()
+    } else if (name === 't' || name === 'T') {
+        toggleInstrunctions()
+    } else if (name === 'b' || name === 'B') {
+        nextBackground()
+    } else if (name === 'm' || name === 'M') {
+        muteSong()
+    } else if (name === 'f' || name === 'F') {
+        if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+         if (document.documentElement.requestFullScreen) {  
+           document.documentElement.requestFullScreen();  
+         } else if (document.documentElement.mozRequestFullScreen) {  
+           document.documentElement.mozRequestFullScreen();  
+         } else if (document.documentElement.webkitRequestFullScreen) {  
+           document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+         }  
+       } else {  
+         if (document.cancelFullScreen) {  
+           document.cancelFullScreen();  
+         } else if (document.mozCancelFullScreen) {  
+           document.mozCancelFullScreen();  
+         } else if (document.webkitCancelFullScreen) {  
+           document.webkitCancelFullScreen();  
+         }  
+       }  
+    }
+})
+```
  
 
 	
