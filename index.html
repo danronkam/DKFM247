@@ -26,7 +26,7 @@
   </head>
 
   <body class="body">
-    <div id="instructions" class="animated fadeIn">
+    <div id="instructions">
         <p>  Welcome to DK-FM <br />
        select whatever you're in the mood for, and relax <br>
         <br>
@@ -75,7 +75,8 @@
       <div class="music_player">
 
         <button id="play_pauseButton" class="music_player_buttons" onclick="playPause()">
-          <i class="fas fa-play"></i> 
+          <i class="fas fa-play" id="playlogo"></i> 
+          <i class="fas fa-pause" id='pauselogo'></i>
         </button>
 
         <button id="skip_button" class="music_player_buttons" onclick="nextSong()">

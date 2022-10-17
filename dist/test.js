@@ -294,8 +294,16 @@ function playPause() {
         playSong();
         isPlaying = true;
     } else if (isPlaying === false) {
+        let playlogo = document.getElementById("playlogo")
+        let pauselogo = document.getElementById("pauselogo")
+        playlogo.style.display='none'
+        pauselogo.style.display = "flex"
         playSong()
     } else {
+        let playlogo = document.getElementById("playlogo")
+        let pauselogo = document.getElementById("pauselogo")
+        playlogo.style.display='flex'
+        pauselogo.style.display = "none"
         pauseSong()
     }
    
