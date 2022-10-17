@@ -46,6 +46,20 @@ let songs = [
         "artist": "Alex Benedict",
         "genre": "Piano",
         "mood": "Dark"
+    }, 
+    {
+        "title": "Schwanengesang, D. 957: IV. Ständchen",
+        "audio": "./dist/Music/Serenade.mp3",
+        "artist": "Franz Schubert",
+        "genre": "Piano",
+        "mood": "Dark"
+    },
+    {
+        "title": "Op. 28 : No. 4, Largo in E Minor",
+        "audio": "./dist/Music/Préludes.mp3",
+        "artist": "24 Préludes",
+        "genre": "Piano",
+        "mood": "Dark"
     },
     {
         "title": "Future Dollars",
@@ -134,11 +148,9 @@ startForm.addEventListener('submit', e => {
     let genre = document.querySelector('#genre').value
 
     if(mood === "Mood" || genre === 'Genre'){
-        console.log("yay")
         let errors = document.getElementById("errors")
         errors.style.display = 'block'
     } else {
-        console.log(mood, genre)
         getPlaylist(mood, genre)
         getBackgrounds(mood)
         getSong(playlistIdx)
@@ -175,8 +187,6 @@ function toggleInstrunctions() {
 
 document.addEventListener('keypress', event => {
     var name = event.key;
-    var code = event.code;
-    
 
     if(name === 'p') {
         playPause()
