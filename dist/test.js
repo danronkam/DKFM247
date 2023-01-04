@@ -25,39 +25,43 @@ let currentTime = document.querySelector(".current_time");
 let totalDuration = document.querySelector(".total_duration");
 let sessionStarted = false
 
+
+//  Element Variables ^^^ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 let songs = [
     {
-        "title": "Abdelazer",
-        "audio": "./dist/Music/Abdelazer.mp3",
-        "artist": "Philip Adler",
+        "title": "Baby Bubble",
+        "audio": "dist/Music/BABYBUBBLE.mp3", 
+        "artist": "QT",
         "genre": "Dark",
         "mood": "Sophie"
     },
     {
-        "title": "DROPdrip",
-        "audio": "./dist/Music/DROPdrip.mp3",
-        "artist": "Palmistry",
+        "title": "Bikers",
+        "audio": "dist/Music/Bikers.mp3",
+        "artist": "A.G. Cook, Sophie",
         "genre": "Dark",
         "mood": "Sophie"
     },
     {
-        "title": "Left Undone",
-        "audio": "./dist/Music/left_undone.mp3",
-        "artist": "Alex Benedict",
+        "title": "Hard (DisMagazine Rinse FM Takeover)",
+        "audio": "dist/Music/Hard.mp3",
+        "artist": "Sophie",
         "genre": "Dark",
-        "mood": "Dark"
+        "mood": "Sophie"
     }, 
     {
-        "title": "Schwanengesang, D. 957: IV. Ständchen",
-        "audio": "./dist/Music/Serenade.mp3",
-        "artist": "Franz Schubert",
+        "title": "High on Helium",
+        "audio": "dist/Music/HIGH_ ON_ HELIUM.mp3",
+        "artist": "Charli XCX",
         "genre": "Dark",
-        "mood": "Dark"
+        "mood": "Sophie"
     },
     {
-        "title": "Op. 28 : No. 4, Largo in E Minor",
-        "audio": "./dist/Music/Préludes.mp3",
-        "artist": "24 Préludes",
+        "title": "My Forever (Ft Cecile Believe & Dev Hynes)",
+        "audio": "dist/Music/My_Forever.mp3",
+        "artist": "Sophie",
         "genre": "Piano",
         "mood": "Dark"
     },
@@ -144,25 +148,8 @@ let images = [
     }
 ]
 
-// const imageSet = new Set(1,2,3,4,5);
+//  Playlists ^^^ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-let setTest = [
-    {
-        "title": 1,
-        "source":  1,
-        "mood": 1
-    },
-    {
-        "title": 1,
-        "source":  1,
-        "mood": 1
-    },
-    {
-        "title": 1,
-        "source":  1,
-        "mood": 1
-    }
-]
 
 let playlist;
 let backgrounds = [];
@@ -170,7 +157,24 @@ let playlistIdx = 0;
 let backgroundIDX = 0;
 let isPlaying = false;
 let currentSong = document.createElement('audio');
-let volumes = [];
+
+
+top_logo.addEventListener('click', e => {
+    window.location.reload()
+})
+
+
+function toggleInstrunctions() {
+    if(!instructions.style.display ||       instructions.style.display === 'block' ) {
+        instructions.style.display = 'none'
+    } else {
+        instructions.style.display = 'block'
+    }
+}
+
+info_button.addEventListener('click', e=> {
+    toggleInstrunctions()
+})
 
 startForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -200,22 +204,19 @@ startForm.addEventListener('submit', e => {
         dkfm.style.display = "flex"
         top_logo.style.display = "flex"
     }
-    
 })
 
-info_button.addEventListener('click', e=> {
-
-    toggleInstrunctions()
-})
-
-function toggleInstrunctions() {
-    if(!instructions.style.display ||       instructions.style.display === 'block' ) {
-        instructions.style.display = 'none'
-    } else {
-        instructions.style.display = 'block'
-    }
-
+function getPlaylist(mood, genre) {
+    console.log(mood, genre);
+    return playlist = songs.filter(song => song.mood === mood && song.genre === genre )
 }
+
+function getBackgrounds(mood) {
+    return backgrounds = images.filter(image => image.mood === mood)
+}
+
+//  Landing Page Controls ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 document.addEventListener('keypress', event => {
     var name = event.key;
@@ -255,40 +256,8 @@ document.addEventListener('keypress', event => {
 })
 
 
-top_logo.addEventListener('click', e => {
-    
-    window.location.reload()
-})
 
-
-function muteSong() {
-    let previousVolume = currentSong.volume
-    if(previousVolume === 0) {
-        currentSong.volume = volumes[volumes.length - 1]
-        volume_slider.value = (volumes[volumes.length - 1]) * 100
-    } else {
-        volumes.push(previousVolume)
-        currentSong.volume = 0
-        volume_slider.value = 0
-    }
-}
-
-volumeButton.addEventListener('click', e => {
-    muteSong()
-})
-
-
-function getPlaylist(mood, genre) {
-    console.log(mood, genre);
-    return playlist = songs.filter(song => song.mood === mood && song.genre === genre )
-}
-
-function getBackgrounds(mood) {
-    return backgrounds = images.filter(image => image.mood === mood)
-}
-
-
-
+//  Hot Key Controls ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 function nextBackground() {
@@ -389,8 +358,32 @@ function nextSong() {
     playSong()
 }
 
+//  Music Play Controls ^^^ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let volumes = [];
 
 function setVolume() {
 
     currentSong.volume = volume_slider.value / 100;
   }
+
+function muteSong() {
+    console.log(volumes)
+    let currentVolume = currentSong.volume
+    if(currentVolume === 0) { //if song is currently muted
+        let previousVolume = volumes.pop();
+
+        currentSong.volume = previousVolume;
+        volume_slider.value = previousVolume * 100;
+    } else { //if song is not muted
+        volumes.push(currentVolume);
+        currentSong.volume = 0;
+        volume_slider.value = 0;
+    }
+}
+
+volumeButton.addEventListener('click', e => {
+    muteSong();
+})
+
+//  Volume Controls ^^ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
