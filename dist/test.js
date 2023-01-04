@@ -30,28 +30,28 @@ let songs = [
         "title": "Abdelazer",
         "audio": "./dist/Music/Abdelazer.mp3",
         "artist": "Philip Adler",
-        "genre": "Piano",
-        "mood": "Chill"
+        "genre": "Dark",
+        "mood": "Sophie"
     },
     {
         "title": "DROPdrip",
         "audio": "./dist/Music/DROPdrip.mp3",
         "artist": "Palmistry",
-        "genre": "Electronic",
-        "mood": "Chill"
+        "genre": "Dark",
+        "mood": "Sophie"
     },
     {
         "title": "Left Undone",
         "audio": "./dist/Music/left_undone.mp3",
         "artist": "Alex Benedict",
-        "genre": "Piano",
+        "genre": "Dark",
         "mood": "Dark"
     }, 
     {
         "title": "Schwanengesang, D. 957: IV. Ständchen",
         "audio": "./dist/Music/Serenade.mp3",
         "artist": "Franz Schubert",
-        "genre": "Piano",
+        "genre": "Dark",
         "mood": "Dark"
     },
     {
@@ -66,28 +66,28 @@ let songs = [
         "audio": "./dist/Music/future-dollars-zuul.mp3",
         "artist": "Zuul",
         "genre": "Electronic",
-        "mood": "Chill"
+        "mood": "Sophie"
     },
     {
         "title": "Eternal Rain Dollars",
         "audio": "./dist/Music/Eternal_Rain.mp3",
         "artist": "Stefan Biniak",
         "genre": "Electronic",
-        "mood": "Chill"
+        "mood": "Sophie"
     },
     {
         "title": "Fall Asleep",
         "audio": "./dist/Music/Chill_Piano.mp3",
         "artist": "Tokyo Music Walker",
         "genre": "Piano",
-        "mood": "Chill"
+        "mood": "Sophie"
     },
     {
         "title": "Spring Joy Flowers",
         "audio": "./dist/Music/Spring_Joy_Flowers.mp3",
         "artist": "Tokyo Music Walker",
         "genre": "Piano",
-        "mood": "Chill"
+        "mood": "Sophie"
     },
     {
         "title": "Deep House Trance Type Beat",
@@ -107,30 +107,60 @@ let songs = [
 
 let images = [
     {
-        "title": "Nighthawks Diner",
-        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-2.gif",
-        "mood": "Chill"
+        "title": "Basketballs",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/bball_64_15_12fps.gif",
+        "mood": "Dark"
     },
     {
-        "title": "People in the Sun",
-        "source": "http://img.weburbanist.com/wp-content/uploads/2018/04/edward-hopper-in-motion-3.gif",
-        "mood": "Chill"
+        "title": "Building",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/building.gif",
+        "mood": "Dark"
     },
     {
-        "title": "pixel scenery",
-        "source": "https://64.media.tumblr.com/673304829a5f7d502979e59c8eaac252/tumblr_mgigxnLRKw1qbzzgco1_1280.gifv",
-        "mood": "Chill"
+        "title": "Pills_dark",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/pills_black.gif",
+        "mood": "Dark"
     },
     {
-        "title": "Hallway",
-        "source": "https://cutewallpaper.org/21/video-background-loops/Best-Hd-Video-Background-Seamless-Loop-Seamless-Background-.gif",
+        "title": "Unlock",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/unlock.gif",
         "mood": "Dark"
     }
     ,
     {
-        "title": "Matrix",
-        "source": "https://j.gifs.com/Q1xW4q@large.gif?download=true",
+        "title": "Blanket",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/blanket.gif",
+        "mood": "Light"
+    },
+    {
+        "title": "Balloons",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/balloons.gif",
+        "mood": "Light"
+    },
+    {
+        "title": "Diamonds",
+        "source": "https://derailed-seed.s3.us-west-1.amazonaws.com/diamonds_64_15_12.gif",
         "mood": "Dark"
+    }
+]
+
+// const imageSet = new Set(1,2,3,4,5);
+
+let setTest = [
+    {
+        "title": 1,
+        "source":  1,
+        "mood": 1
+    },
+    {
+        "title": 1,
+        "source":  1,
+        "mood": 1
+    },
+    {
+        "title": 1,
+        "source":  1,
+        "mood": 1
     }
 ]
 
@@ -151,7 +181,9 @@ startForm.addEventListener('submit', e => {
         let errors = document.getElementById("errors")
         errors.style.display = 'block'
     } else {
+        console.log(mood, genre)
         getPlaylist(mood, genre)
+        console.log(playlist)
         getBackgrounds(mood)
         getSong(playlistIdx)
         playSong()
@@ -247,6 +279,7 @@ volumeButton.addEventListener('click', e => {
 
 
 function getPlaylist(mood, genre) {
+    console.log(mood, genre);
     return playlist = songs.filter(song => song.mood === mood && song.genre === genre )
 }
 
@@ -273,8 +306,8 @@ function nextBackground() {
 function getSong(playlistIdx) {
     if (!playlist) {
         playlist = songs
+        console.log(songs, "<- this is songs")
     }
-    // reset()
 
     currentSong.src = playlist[playlistIdx].audio;
     currentSong.load()
